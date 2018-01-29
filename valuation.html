@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+            <div>£<script language="JavaScript">
+      var url="https://docs.google.com/spreadsheet/pub?key=0AjaDYTsxYrzTdFc2N2FFVVhSYnBfbTFnUXRwdHhydnc&single=true&gid=5&range=k14&output=csv";
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          {
+            document.getElementById("display").innerHTML = xmlhttp.responseText;
+          }
+        };
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send(null);
+      function ackbutton() {
+            //e.preventDefault();
+            var $this = $(this);
+            var getvalues = $('#evtid').val();
+            alert(getvalues);
+        }
+    </script><i	id="display"></div>
+</body>
+</html>

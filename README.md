@@ -1,17 +1,82 @@
-# Securities_Exchange
-Open Source Private Virtual Currency Securities Exchange (PVCSE)
+Facebook SDK for PHP
+====================
 
-This project permits any Tech Startup to raise funds, manage equity, trade shares and easily branch equity with the technology their developing without banks, contracts, over-regulation, beurocracy and trivial business managemenet tasks which distract the founders and developers from their core focus.
+[![Latest Stable Version](http://img.shields.io/badge/Latest%20Stable-4.0.11-blue.svg)](https://packagist.org/packages/facebook/php-sdk-v4)
 
-The PVCSE is an early project, but it is already being used with many tech startup's:
-This website plugin gives your tech-startup's website:
 
-(1) a control panel to manage the equity 
-(2) a stock graph bar to put on the top of your website 
-(3) a user interface (PHP/MYSQL) 
-(4) quick start connections to Bitcoin
+This repository contains the open source PHP SDK that allows you to access Facebook
+Platform from your PHP app.
 
-All matters surrounding this project should be directed to me: 
 
-Sion Buckler 
-Founder
+Usage
+-----
+
+This version of the Facebook SDK for PHP requires PHP 5.4 or greater.
+
+Minimal example:
+
+```php
+use Facebook\FacebookSession;
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
+use Facebook\FacebookRequestException;
+
+FacebookSession::setDefaultApplication('YOUR_APP_ID','YOUR_APP_SECRET');
+
+// Use one of the helper classes to get a FacebookSession object.
+//   FacebookRedirectLoginHelper
+//   FacebookCanvasLoginHelper
+//   FacebookJavaScriptLoginHelper
+// or create a FacebookSession with a valid access token:
+$session = new FacebookSession('access-token-here');
+
+// Get the GraphUser object for the current user:
+
+try {
+  $me = (new FacebookRequest(
+    $session, 'GET', '/me'
+  ))->execute()->getGraphObject(GraphUser::className());
+  echo $me->getName();
+} catch (FacebookRequestException $e) {
+  // The Graph API returned an error
+} catch (\Exception $e) {
+  // Some other error occurred
+}
+
+```
+
+Complete documentation, installation instructions, and examples are available at:
+[https://developers.facebook.com/docs/php](https://developers.facebook.com/docs/php)
+
+
+Tests
+-----
+
+1) [Composer](https://getcomposer.org/) is a prerequisite for running the tests.
+
+Install composer globally, then run `composer install` to install required files.
+
+2) Create a test app on [Facebook Developers](https://developers.facebook.com), then
+create `tests/FacebookTestCredentials.php` from `tests/FacebookTestCredentials.php.dist`
+and edit it to add your credentials.
+
+3) The tests can be executed by running this command from the root directory:
+
+```bash
+./vendor/bin/phpunit
+```
+
+
+Contributing
+------------
+
+For us to accept contributions you will have to first have signed the
+[Contributor License Agreement](https://developers.facebook.com/opensource/cla).
+
+When committing, keep all lines to less than 80 characters, and try to
+follow the existing style.
+
+Before creating a pull request, squash your commits into a single commit.
+
+Add the comments where needed, and provide ample explanation in the
+commit message.
