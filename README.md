@@ -1,7 +1,7 @@
-# Securities Exchange
+# Private Virtual Curerncy (BTC) Securities Exchange
 
-## The Securities Exchange is a system for purchase and redeeming HotspotBnB cryptocurrency tokens.
+## This prototype/ mockup for an open-source Private Virtual Currency Securities Exchange. 
 
-### The Alpha version of this platform was built on Bitcoin. Moving forward the system will be dependant on Etheriums blockchain. 
+### The general idea was you have 100 tokens (the platform used BTC at the time). Each would reflect a share in your website/ startup.  
 
-### The tokens all represent beneficial interest in the HotspotBnB platform. The idea is that royalties generated from the technology platform will be distributed to the same wallet addresses where the tokens are being held, using smart contracts. 
+### We didn't realise it at the time but this was the origins of the idea for our DAO
